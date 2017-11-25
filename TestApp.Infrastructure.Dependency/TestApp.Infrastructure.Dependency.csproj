@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestApp.Core.Interface\TestApp.Core.Interface.csproj" />
+    <ProjectReference Include="..\TestApp.Infrastructure.Data\TestApp.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\TestApp.Service.App\TestApp.Service.App.csproj" />
+    <ProjectReference Include="..\TestApp.Service.Domain\TestApp.Service.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
