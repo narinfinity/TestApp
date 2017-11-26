@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using TestApp.Core.Entity.App;
 using TestApp.Core.Entity.Domain;
 using TestApp.Core.Interface.Service.App;

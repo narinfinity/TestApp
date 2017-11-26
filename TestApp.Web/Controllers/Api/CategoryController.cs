@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using TestApp.Core.Entity.App;
 using TestApp.Core.Entity.Domain;
 using TestApp.Core.Interface.Service.App;
@@ -38,15 +37,15 @@ namespace TestApp.Web.Controllers.Api
             _productStoreService = productStoreService;
             _logger = loggerFactory.CreateLogger<CategoryController>();
         }
-        // GET: api/Category
-        [HttpGet("{id:int?}", Name = "GetCategory")]
+        // GET: api/Categories
+        [HttpGet("{id:int?}", Name = "Category")]
         public IEnumerable<Category> Get(int id)
         {
             return _productStoreService.GetCategoryOrList(id);
         }
 
-        // GET: api/Category/5
-        //[HttpGet("{id:int}")]
+        //GET: api/Category/5
+        //[HttpGet("{id:int}", Name = "Category")]
         //public Category Get(int id)
         //{
         //    return new Category();

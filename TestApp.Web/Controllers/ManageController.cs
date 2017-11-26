@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using TestApp.Core.Entity.App;
 using TestApp.Core.Interface.Service.App;
 using TestApp.Web.Models.ManageViewModels;

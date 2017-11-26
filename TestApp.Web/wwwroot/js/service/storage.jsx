@@ -13,7 +13,7 @@ export class Storage {
     @observable orderList;
     @observable order;
     @observable paymentInfo;
-    productFilter = (p, i) => true;
+    
 
     constructor() {
         this.categoryList = [];
@@ -31,7 +31,7 @@ export class Storage {
     }
 
     @computed get filteredProducts() {
-        return this.productList.filter(this.productFilter).map((p, i) => new Product(p));
+        return this.productList.filter((p, i) => true).map((p, i) => new Product(p));
     }
 
     savePayment(payment) {
@@ -60,6 +60,21 @@ export class Storage {
             });
 
     }
+    getCategoryList(categoryId) {
+        let baseUrl = this.devServer;
+        return Axios.get(baseUrl + '/api/category', { params: { id: categoryId } })
+            .then((res) => {
+
+                if (res && res.data.length) {
+                    let catList = res.data.map(e => new Category(e));
+                    this.categoryList.length = 0;
+                    this.categoryList.push(...catList);
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
     getProductList(categoryId) {
         let baseUrl = this.devServer;
 
@@ -78,27 +93,16 @@ export class Storage {
                     });
                     this.productList.length = 0;
                     this.productList.push(...products);
+                    
                 }
+                
             })
             .catch((err) => {
-                alert(err);
+                console.log(err);
             });
     }
 
-    getCategoryList(categoryId) {
-        let baseUrl = this.devServer;
-        return Axios.get(baseUrl + '/api/category', { params: { id: categoryId } })
-            .then((res) => {
-                if (res && res.data.length) {
-                    let catList = res.data.map(e => new Category(e));
-                    this.categoryList.length = 0;
-                    this.categoryList.push(...catList);
-                }
-            })
-            .catch((err) => {
-                alert(err);
-            });
-    }
+    
 
     getOrderList(orderId) {
         let baseUrl = this.devServer;
@@ -122,7 +126,7 @@ export class Storage {
                 }
             })
             .catch((err) => {
-                alert(err);
+                console.log(err);
             });
     }
 

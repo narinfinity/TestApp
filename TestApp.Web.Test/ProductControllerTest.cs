@@ -1,17 +1,12 @@
 using Moq;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using TestApp.Core.Entity.Domain;
-using TestApp.Core.Interface.Common;
-using TestApp.Core.Interface.Service.Domain;
 using TestApp.Infrastructure.Data;
 using TestApp.Infrastructure.Data.Common;
 using TestApp.Service.Domain;

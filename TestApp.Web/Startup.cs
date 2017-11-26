@@ -2,7 +2,6 @@
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,8 +13,6 @@ using TestApp.Core.Entity.App;
 using TestApp.Infrastructure.Dependency;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using TestApp.Web.Models;
-using Microsoft.AspNetCore.Server.IISIntegration;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace TestApp.Web
@@ -123,7 +120,8 @@ namespace TestApp.Web
             var options = new JwtBearerOptions
             {
                 Audience = Configuration["Auth0:ApiIdentifier"],
-                Authority = $"https://{Configuration["Auth0:Domain"]}/"
+                Authority = $"https://{Configuration["Auth0:Domain"]}/",
+                
             };
             //app.UseJwtBearerAuthentication(options);
             

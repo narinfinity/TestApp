@@ -19,17 +19,17 @@ namespace TestApp.Web.Controllers.Api
             _productStoreService = productStoreService;
         }
         // GET: api/Product
-        [HttpGet("{categoryId:int?}", Name = "GetProduct")]
+        [HttpGet("{categoryId:int?}", Name = "Product")]
         public IEnumerable<Product> Get(int categoryId)
         {
             return _productStoreService.GetProductsByCategory(new Category { Id = categoryId });
         }
 
         //// GET: api/Product/5
-        //[HttpGet("{id:int}")]
+        //[HttpGet("{id:int}", Name = "Product")]
         //public Product Get(int id)
         //{
-        //    return new Product();
+        //    return new Product();//TODO _productStoreService.GetProductById(id)
         //}
 
         // POST: api/Product

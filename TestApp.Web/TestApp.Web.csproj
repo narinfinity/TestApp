@@ -10,6 +10,9 @@
 
   <PropertyGroup>
     <UserSecretsId>aspnet-TestApp.Web-f11ec2df-6e25-4838-8e05-2ad13df1bb2c</UserSecretsId>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>

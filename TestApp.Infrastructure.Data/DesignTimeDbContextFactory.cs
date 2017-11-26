@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TestApp.Infrastructure.Data
 {
@@ -11,7 +8,7 @@ namespace TestApp.Infrastructure.Data
         public AppDbContext CreateDbContext(string[] args)
         {            
             var builder = new DbContextOptionsBuilder<AppDbContext>();
-            var conStr = "Server=\\NSERVER;Database=TestApp;User ID=sa;Password=pass;Trusted_Connection=False;Encrypt=False;TrustServerCertificate=False;MultipleActiveResultSets=True;";
+            var conStr = "Server=D\\NSERVER;Database=TestApp;User ID=sa;Password=p;Trusted_Connection=False;Encrypt=False;TrustServerCertificate=False;MultipleActiveResultSets=True;";
             builder.UseSqlServer(conStr);
             return new AppDbContext(builder.Options);
         }
